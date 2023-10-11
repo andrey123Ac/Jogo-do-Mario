@@ -51,6 +51,14 @@ const loop = setInterval(() => {
             mario.style.width = '150px'
             mario.style.bottom = 0
             som.play()
+
+            setTimeout(() => {
+        
+                contador = 0
+                pontos.innerHTML = "";
+              
+            }, 400);
+
             setTimeout(() => {
 
                 reiciniar.classList.add('hide');
@@ -75,14 +83,27 @@ botaoStar.addEventListener('click', () => {
 
     pipe.classList.remove('posicaoInicialcano');
     pipe.classList.add('inimacaoCano');
-    botaoStar.classList.add('hide');
-    contador = 0
-    pontos.innerHTML = "";
-  som = new Audio('audio_theme.mp3')
-  som.play()
-   
+    botaoStar.classList.add('hide');  
+    som = new Audio('audio_theme.mp3')
+    som.play()
+
+
+    setTimeout(() => {
+
+        contador = 0
+        pontos.innerHTML = "";
+      
+    }, 400);
+
+    
+
 });
 
+document.addEventListener('click', () => {
+    jump()
+    aumentarContador()
+
+});
 
 document.addEventListener('keydown', () => {
     jump()
